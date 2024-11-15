@@ -1,26 +1,17 @@
 package pard.moa.be.project.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import pard.moa.be.project.entity.Project;
 
+@Getter
+@AllArgsConstructor
 public class ProjectResponseDto {
-    @Getter
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @NoArgsConstructor @AllArgsConstructor
-    public static class ProjectCreateRequest {
-        @NotBlank // Ensures name is provided on creation
-        private String name;
-    }
+    private Long id;
+    private String name;
+    private Long userId;
 
-    @Getter
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @NoArgsConstructor @AllArgsConstructor
-    public static class ProjectPatchRequest {
-        @NotBlank // Ensures name is provided on update
-        private String name;
+    public static ProjectResponseDto from(Project project) {
+        return new ProjectResponseDto(project.getId(), project.getName(), project.getUserId());
     }
 }
-
