@@ -16,9 +16,9 @@ public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Task ID (auto-generated)
+    private Long id;
 
-    private String title; // Task Title
+    private String title;
 
     @ManyToOne
     @JoinColumn(name = "project_id", nullable = false) // Foreign key to Project

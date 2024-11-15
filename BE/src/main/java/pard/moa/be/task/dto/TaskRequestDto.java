@@ -13,6 +13,6 @@ public class TaskRequestDto {
     @AllArgsConstructor
     public static class TaskCreateRequest {
         @NotBlank
-        private String title; // Task title
+        private String title;
     }
 }

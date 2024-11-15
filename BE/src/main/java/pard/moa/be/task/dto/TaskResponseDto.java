@@ -13,11 +13,11 @@ public class TaskResponseDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class TaskRead {
-        private Long id;       // Task ID
-        private String title;  // Task Title
-        private Long projectId; // Associated Project ID
+        private Long id;
+        private String title;
+        private Long projectId;
 
-        // Converts a Task entity to TaskRead DTO
+        // Converts Task entity to TaskRead DTO
         public static TaskRead from(Task task) {
             return new TaskRead(
                     task.getId(),

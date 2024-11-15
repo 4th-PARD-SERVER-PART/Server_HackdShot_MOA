@@ -7,13 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import pard.moa.be.member.dto.MemberResponseDto;
 import pard.moa.be.member.service.MemberService;
 import pard.moa.be.project.dto.ProjectRequestDto;
-import pard.moa.be.project.service.ProjectService;
 import pard.moa.be.project.dto.ProjectResponseDto;
-
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import pard.moa.be.project.service.ProjectService;
 
 import java.util.List;
 
@@ -49,7 +44,7 @@ public class ProjectController {
         return ResponseEntity.ok("Project updated successfully");
     }
 
-    //Post members
+    //Post member
     @PostMapping("/{projectId}/members")
     @Operation(summary = "member 추가하기 룰루...")
     public ResponseEntity<String> addMember(@PathVariable Long projectId, @RequestParam String name) {

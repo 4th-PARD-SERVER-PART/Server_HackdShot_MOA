@@ -16,11 +16,11 @@ import java.util.List;
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Project ID (auto-generated)
+    private Long id;
 
-    private String name; // Project Name
+    private String name;
 
-    private Long userId; // User ID (auto-generated)
+    private Long userId;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Member> members; // List of Members linked to the Project

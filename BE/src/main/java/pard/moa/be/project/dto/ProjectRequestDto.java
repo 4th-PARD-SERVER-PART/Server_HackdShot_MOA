@@ -11,6 +11,6 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 public class ProjectRequestDto {
-    private String name; // Name of the project
+    private String name;
 }
 

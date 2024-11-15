@@ -16,7 +16,7 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Member ID (auto-generated)
+    private Long id;
 
     private String name;
 

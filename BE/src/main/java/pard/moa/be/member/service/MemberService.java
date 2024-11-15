@@ -21,8 +21,7 @@ public class MemberService {
 
     // Add a member to a project
     public void addMember(Long projectId, String memberName) {
-        Project project = projectRepo.findById(projectId)
-                .orElseThrow(() -> new IllegalArgumentException("Project not found"));
+        Project project = projectRepo.findById(projectId).orElseThrow(() -> new IllegalArgumentException("Project not found"));
 
         Member member = new Member(memberName, project);
         memberRepo.save(member);
@@ -34,8 +33,6 @@ public class MemberService {
             throw new IllegalArgumentException("Project not found");
         }
 
-        return memberRepo.findByProjectId(projectId).stream()
-                .map(MemberResponseDto::from)
-                .collect(Collectors.toList());
+        return memberRepo.findByProjectId(projectId).stream().map(MemberResponseDto::from).collect(Collectors.toList());
     }
 }
